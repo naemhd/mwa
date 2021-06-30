@@ -1,5 +1,6 @@
 const express =require("express")
 const myRouter=require("./api/routes")
+const path=require("path")
 
 const app=express();
 app.use(express.urlencoded({extended:false}))
@@ -11,7 +12,11 @@ app.use(function(req,res,next){
     next();
 })
 
-app.use("/",myRouter)
+app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
+
+app.use("/api",myRouter)
+
+app.use("/", express.static(path.join(__dirname, "public")));
 
 
 app.set("port",3000)

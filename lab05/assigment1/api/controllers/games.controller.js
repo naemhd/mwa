@@ -15,7 +15,7 @@ module.exports.getAll = (req, res) => {
 }
 
 module.exports.getGame = (req, res) => {
-    Game.find({ "_id": req.params.gameId }).limit(1).exec((err, games) => {
+    Game.findOne({ "_id": req.params.gameId }).limit(1).exec((err, games) => {
         console.log("This Is Games (docs)", games);
         res.status(200).json(games);
     })

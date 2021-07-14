@@ -33,6 +33,10 @@ export class GameListComponent implements OnInit {
       .then(foundGames => this.games=foundGames);
   }
 
+  public deleteGame(gameId: string):void{
+    this.gamesService.deleteGame(gameId).then(()=>this.getGames())
+  }
+
 }
 
 export class Game{

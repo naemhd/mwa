@@ -4,5 +4,6 @@
     <a routerLink="/games/{{game._id}}">Title: {{game.title}}<br/></a>
     Price: {{game.price}}<br/>
     Year: {{game.year}}<br/>
+    <button (click)="deleteGame(game._id)">Delete</button>
     
 </li>

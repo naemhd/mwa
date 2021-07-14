@@ -1,1 +1,10 @@
-<p>game-create works!</p>
+<h1>Add New Game</h1>
+<form>
+    Title: <input type="text" name="title" requried [(ngModel)]="title"><br/><br/>
+    Year:<input type="text" name="year" ng-pattern="/^[0-9]*$/" required [(ngModel)]="year"><br><br/>
+    Price:<input type="text" name="price" ng-pattern="/^[0-9]*$/" required [(ngModel)]="price"><br><br/>
+    Min players:<input type="text" name="min" ng-pattern="/^[0-9]*$/" required [(ngModel)]="min"><br><br/>
+    max players:<input type="text" name="max" ng-pattern="/^[0-9]*$/" required [(ngModel)]="max"><br><br/>
+    Rate:<input type="text" name="rate" ng-pattern="/^[0-9]*$/" required [(ngModel)]="rate"><br><br/>
+    <button type="button" (click)="addGame()" class="bg-success" >Add New Game</button>
+</form>

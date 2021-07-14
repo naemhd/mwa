@@ -32,4 +32,18 @@ export class GamesDataService {
   private handleError(error:any):Promise<any>{
     return Promise.reject(error.message||error);
   }
+
+  public addGame(postData: Object):Promise<Game>{
+    const url: string= this.apiBaseUrl+"/games/";
+    return this.http.post(url,postData).toPromise()
+    .then(response=>response as Game)
+    .catch(this.handleError);
+  }
+
+  public deleteGame(gameId: string):Promise<Game>{
+    const url: string= this.apiBaseUrl+"/games/"+gameId;
+    return this.http.delete(url).toPromise()
+    .then()
+    .catch(this.handleError);
+  }
 }

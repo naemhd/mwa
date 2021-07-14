@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import {FormsModule} from '@angular/forms'
+
 
 import { AppComponent } from './app.component';
 import { GameListComponent } from './game-list/game-list.component';
@@ -10,6 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { GamePageComponent } from './game-page/game-page.component';
 import { GameCreateComponent } from './game-create/game-create.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { GameCreateComponent } from './game-create/game-create.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: "",

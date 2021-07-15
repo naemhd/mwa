@@ -1,0 +1,25 @@
+<h1>{{vm.title}}</h1>
+
+<div class="card">
+    <div class="card-body">
+        <p ng-show="vm.error" class="text-danger">{{vm.error}}</p>
+        <form name="vm.searchForm" ng-submit="vm.search()">
+        Lat: <input type="text" ng-pattern="/^[0-9]*$/" required ng-minlength="1" ng-model="vm.lat">
+        Lng: <input type="text" ng-pattern="/^[0-9]*$/" required ng-minlength="1" ng-model="vm.lng">
+        Max Distance: <input type="text" ng-pattern="/^[0-9]*$/" required ng-model="vm.max">
+        <button class="bg-success">Search</button>
+        </form>
+    </div>
+</div>
+<div style="padding: 10px;">
+<button class="bg-primary" ng-click="vm.back()">Back</button>
+<button class="bg-primary" ng-click="vm.next()">Next</button>
+</div>
+    <div class="card" ng-repeat="city in vm.cities">
+        
+            <div class="card-body">
+        <a class="p15" href="/#!/cities/{{city._id}}"><h4>City: {{city.city}} |  state: {{city.state}}</h4></a>
+            <button ng-click="vm.deleteCity(city._id)" class="bg-danger">Delete</button>
+            </div>
+            </div>
+

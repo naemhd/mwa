@@ -1,0 +1,11 @@
+<h1>Add New City</h1>
+<p ng-show="vm.error" class="text-danger">{{vm.error}}</p>
+<p ng-show="vm.saved" class="text-success">{{vm.saved}}</p>
+<form name="vm.cityForm" ng-submit="vm.addCity()">
+    City Name: <input type="text" name="city" requried ng-model="vm.city"><br/><br/>
+    City Zip:<input type="text" name="zip" ng-pattern="/^[0-9]*$/" required ng-model="vm.zip"><br><br/>
+    state: <input type="text" name="state" ng-model="vm.state"><br><br>
+    Population: <input type="text" name="pop" ng-pattern="/^[0-9]*$/" ng-model="vm.pop"><br><br>
+    Location: Lat<input type="text" name="lat" ng-pattern="/^[0-9]*$/" ng-model="vm.lat"> Lng<input type="text" name="lng" ng-pattern="/^[0-9]*$/" ng-model="vm.lng"><br><br>
+    <button type="submit" class="bg-success" >Add New City</button>
+</form>

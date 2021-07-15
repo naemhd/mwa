@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meanCities">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="./angular-app/app.js"></script>
+    <script src="./angular-app/listing/listing.controller.js"></script>
+    <script src="./angular-app/details/details.controller.js"></script>
+    <script src="./angular-app/create/create.controller.js"></script>
+    <script src="./angular-app/cities-data-factory/cities.data.factory.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <ul class="nav bg-warning">
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="/"><b>Home</b></a>
+        </li>
+        <li>
+            <a class="nav-link text-dark" href="/#!/cities/create"><b>+Add New</b></a>
+        </li>
+    </ul>
+    <div ng-view class="container bg-dark"></div>
+    
+</body>
+</html>
